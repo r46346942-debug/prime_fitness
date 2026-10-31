@@ -1,0 +1,406 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --red: #ff3030;
+    --dark: #101010;
+    --panel: #1d1d1d;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--dark);
+    color: white;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+span {
+    color: var(--red);
+}
+
+/* Navbar */
+header {
+    background: #080808;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: auto;
+    padding: 18px 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#navLinks {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+#navLinks a {
+    font-size: 12px;
+}
+
+#navLinks a:hover {
+    color: var(--red);
+}
+
+#menuBtn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Home Hero */
+.hero {
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background:
+        linear-gradient(90deg, #000000e8, #00000055),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #ddd;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--red);
+    border: 2px solid var(--red);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--red);
+}
+
+/* Sections */
+.section {
+    padding: 65px 7%;
+    text-align: center;
+}
+
+.section h2,
+.content h2 {
+    font-size: 32px;
+    margin-bottom: 22px;
+}
+
+.dark {
+    background: #191919;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.card {
+    background: var(--panel);
+    padding: 25px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--red);
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #ccc;
+}
+
+.card a {
+    display: inline-block;
+    color: var(--red);
+    margin-top: 12px;
+}
+
+/* Other Pages */
+.page-banner {
+    padding: 65px 7%;
+    text-align: center;
+    background: #191919;
+}
+
+.page-banner h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 12px;
+}
+
+.page-banner p {
+    color: #ccc;
+}
+
+.content {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 7%;
+}
+
+.content p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.content h3 {
+    color: var(--red);
+    margin-bottom: 10px;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Membership and Equipment */
+.plan {
+    background: var(--panel);
+    border: 1px solid var(--red);
+    border-radius: 6px;
+    padding: 25px;
+}
+
+.plan h3 {
+    color: var(--red);
+}
+
+.plan h2 {
+    margin: 15px 0;
+}
+
+.plan p {
+    margin: 10px 0;
+}
+
+.equipment {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* FAQ */
+.faq-question {
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    background: #222;
+    color: white;
+    border: 1px solid #444;
+    text-align: left;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px;
+    background: #191919;
+    color: #ccc;
+}
+
+/* Contact Form */
+form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: left;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 13px;
+    background: #222;
+    color: white;
+    border: 1px solid #555;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+form button {
+    align-self: flex-start;
+}
+
+#formMessage {
+    color: #ff7777;
+}
+
+/* Footer with Sitemap-style Links */
+.footer {
+    background: #080808;
+    padding: 40px 7% 15px;
+    margin-top: 30px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 30px;
+    text-align: left;
+}
+
+.footer h2 {
+    margin-bottom: 12px;
+}
+
+.footer h3 {
+    margin-bottom: 12px;
+}
+
+.footer p {
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 15px;
+}
+
+.footer-links a {
+    color: #bbb;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: var(--red);
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 18px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    #menuBtn {
+        display: block;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    #navLinks {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: 75vh;
+        overflow-y: auto;
+        background: #080808;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    #navLinks.show {
+        display: flex;
+    }
+
+    #navLinks a {
+        font-size: 14px;
+    }
+
+    .cards,
+    .equipment,
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .cards,
+    .equipment,
+    .gallery,
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 450px;
+        padding: 50px 6%;
+    }
+
+    .section h2,
+    .content h2 {
+        font-size: 27px;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
